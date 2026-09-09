@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Naturista China | Cliente</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f8f2;color:#173d28}
+header{background:#fff;box-shadow:0 2px 12px #0001;position:sticky;top:0;z-index:10}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 22px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;color:#12612f}
+.logo img{width:58px;height:58px;object-fit:contain}
+nav a{color:#174d2b;text-decoration:none;margin-left:22px;font-weight:700}
+nav a:hover{color:#62a812}
+.btn{border:0;border-radius:25px;padding:11px 20px;background:#177236;color:white;font-weight:700;cursor:pointer}
+.btn:hover{background:#0e5428}
+.hero{background:linear-gradient(135deg,#eaf6dc,#fff);padding:55px 22px}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.hero h1{font-size:48px;color:#12612f;line-height:1.05;margin-bottom:15px}
+.hero p{font-size:18px;line-height:1.6;color:#536254;margin-bottom:22px}
+.hero-card{background:#fff;border-radius:28px;padding:28px;text-align:center;box-shadow:0 15px 40px #173d2818}
+.hero-card img{width:230px;max-width:100%}
+section{max-width:1200px;margin:auto;padding:50px 22px}
+.title{text-align:center;margin-bottom:28px}
+.title h2{font-size:32px;color:#12612f}.title p{color:#69766c;margin-top:8px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{background:white;border-radius:18px;padding:20px;box-shadow:0 5px 20px #173d2810;border:1px solid #e4eadf}
+.pic{height:145px;border-radius:14px;background:#eef6e7;display:flex;align-items:center;justify-content:center;font-size:55px;margin-bottom:15px}
+.product h3{font-size:18px;margin-bottom:7px}.product p{font-size:14px;color:#718073;min-height:40px}
+.price{font-size:21px;font-weight:800;color:#5c980e;margin:12px 0}
+.cart{width:100%}
+.info{background:#12612f;color:#fff;border-radius:25px;padding:35px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.info div{text-align:center}.info strong{font-size:30px;display:block;margin-bottom:8px}.info span{opacity:.9}
+footer{background:#0e3e22;color:#dcebdc;padding:28px;text-align:center}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}nav a{margin-left:8px;font-size:13px}}
+@media(max-width:520px){.products,.info{grid-template-columns:1fr}.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <div class="logo"><img src="logo.png"><span>CASA NATURISTA<br>CHINA</span></div>
+  <nav><a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><button class="btn" onclick="alert('Carrito vacío')">🛒 Carrito</button></nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+ <div class="hero-inner">
+  <div>
+   <h1>Tu bienestar<br>es nuestra prioridad</h1>
+   <p>Encuentra productos naturales y opciones para cuidar tu bienestar de una manera sencilla, confiable y saludable.</p>
+   <button class="btn" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver productos</button>
+  </div>
+  <div class="hero-card"><img src="logo.png"><h2>Casa Naturista China</h2><p>Productos naturales seleccionados para ti.</p></div>
+ </div>
+</section>
+
+<section id="productos">
+ <div class="title"><h2>Productos destacados</h2><p>Conoce algunas de nuestras opciones naturales</p></div>
+ <div class="products">
+  <article class="product"><div class="pic">🌿</div><h3>Infusión Natural</h3><p>Selección de hierbas para disfrutar en casa.</p><div class="price">S/ 18.00</div><button class="btn cart" onclick="addCart('Infusión Natural')">Agregar al carrito</button></article>
+  <article class="product"><div class="pic">🍵</div><h3>Té Herbal</h3><p>Una alternativa natural para acompañar tu día.</p><div class="price">S/ 25.00</div><button class="btn cart" onclick="addCart('Té Herbal')">Agregar al carrito</button></article>
+  <article class="product"><div class="pic">🌱</div><h3>Extracto Natural</h3><p>Producto natural cuidadosamente seleccionado.</p><div class="price">S/ 32.00</div><button class="btn cart" onclick="addCart('Extracto Natural')">Agregar al carrito</button></article>
+  <article class="product"><div class="pic">🫙</div><h3>Producto Tradicional</h3><p>Opciones inspiradas en la tradición naturista.</p><div class="price">S/ 28.00</div><button class="btn cart" onclick="addCart('Producto Tradicional')">Agregar al carrito</button></article>
+ </div>
+</section>
+
+<section id="nosotros">
+ <div class="info">
+  <div><strong>🌿</strong><span>Productos naturales</span></div>
+  <div><strong>✓</strong><span>Atención confiable</span></div>
+  <div><strong>♥</strong><span>Bienestar primero</span></div>
+ </div>
+</section>
+</main>
+<footer>© 2026 Casa Naturista China · Tu bienestar es nuestra prioridad</footer>
+<script>
+function addCart(nombre){alert(nombre+" fue agregado al carrito.");}
+</script>
+</body>
+</html>
